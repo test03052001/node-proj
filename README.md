@@ -4,7 +4,15 @@ Express + MySQL demo project built from `mysql-schema.sql`. It has a layered str
 
 ## Setup
 
-1. Copy `.env.example` to `.env` and update your MySQL username/password.
+1. Copy `.env.example` to `.env` and set the required environment variables with runtime-specific values.
+   - `DB_USER`
+   - `DB_PASSWORD`
+   - `DB_HOST`
+   - `DB_PORT`
+   - `DB_NAME`
+   - `DB_CONNECTION_LIMIT`
+   - `PORT`
+   - `ALLOWED_ORIGINS`
 2. Install dependencies:
 
 ```bash
@@ -30,6 +38,8 @@ npm run dev
 ```
 
 The API runs on `http://localhost:3000` by default.
+
+For production or containerized deployments, inject these values through environment variables at runtime (for example `docker run -e`, Compose `environment:`, Kubernetes Secrets, or CI variables). Do not bake secrets into images or commit a real `.env` file.
 
 ## Main Endpoints
 
